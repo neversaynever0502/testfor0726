@@ -1,0 +1,123 @@
+<!DOCTYPE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html> 
+<head> 
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+
+<script type="text/javascript">
+var countdownnumber=0;
+var daycount=0;
+var countdownid,x,y;
+function initial(){
+  x=document.getElementById("countdown");
+  countdown.style.fontSize=Number(30)+ "px" ;
+  x.innerHTML=countdownnumber;
+  countdownid=window.setInterval(win,1000);
+  y=document.getElementById("countdownday");
+  countdownday.style.fontSize=Number(25)+ "px" ;
+  y.innerHTML=daycount;
+  daycount++;
+  countdownid2=window.setInterval(countdowndayfunc,1000);
+
+}
+
+function countdowndayfunc(){ 
+  y.innerHTML=daycount;
+  daycount++;
+}
+
+
+function backmoneyfunc1(){ 
+  x.innerHTML=countdownnumber;
+  countdownnumber+=1;
+}
+function backmoneyfunc5(){ 
+  x.innerHTML=countdownnumber;
+  countdownnumber+=5;
+}function backmoneyfunc10(){ 
+  x.innerHTML=countdownnumber;
+  countdownnumber+=10;
+}function backmoneyfunc50(){ 
+  x.innerHTML=countdownnumber;
+  countdownnumber+=50;
+}
+function backmoney1(){
+    x.innerHTML=countdownnumber;
+     countdownid=window.setInterval(backmoneyfunc1,1000);
+       countdownnumber+=1;
+}
+function backmoney5(){
+    x.innerHTML=countdownnumber;
+     countdownid=window.setInterval(backmoneyfunc5,1000);
+       countdownnumber+=1;
+}
+function backmoney10(){
+    x.innerHTML=countdownnumber;
+     countdownid=window.setInterval(backmoneyfunc10,1000);
+       countdownnumber+=1;
+}
+function backmoney50(){
+    x.innerHTML=countdownnumber;
+     countdownid=window.setInterval(backmoneyfunc50,1000);
+       countdownnumber+=1;
+}
+
+function win(){
+  x.innerHTML=countdownnumber;
+  if (countdownnumber>1000000){
+    alert("你贏了！！！恭喜成為百萬富翁！！！");
+ clearInterval(countdownid);
+
+  }
+}
+
+function income100(){
+  x.innerHTML=countdownnumber;
+  countdownnumber+=100;
+}
+function income800(){
+  x.innerHTML=countdownnumber;
+  countdownnumber+=800;
+}
+function income2000(){
+  x.innerHTML=countdownnumber;
+  countdownnumber+=2000;
+}
+function income10000(){
+  x.innerHTML=countdownnumber;
+  countdownnumber+=10000;
+}
+
+
+</script>
+</head> 
+<body align="center" onload="initial();"> 
+<h1>成為百萬富翁</h1>
+<br><br> 
+<p>第幾天:</p>
+<div id="countdownday"> </div>
+<br> 
+<p>你的財產:</p>
+<div id="countdown"> </div>
+<br><br> 
+<button class="btn btn-primary" onclick="income100()">+100</button>
+<button class="btn btn-primary" onclick="income800()">+800</button>
+<button class="btn btn-primary" onclick="income2000()">+2000</button>
+<button class="btn btn-primary" onclick="income10000()">+10000</button>
+<br>
+<button class="btn btn-info" onclick="backmoney1()">被動收入+1</button>
+<button class="btn btn-info" onclick="backmoney5()">被動收入+5</button>
+<button class="btn btn-info" onclick="backmoney10()">被動收入+10</button>
+<button class="btn btn-info" onclick="backmoney50()">被動收入+50</button>
+
+</body> 
+</html>
