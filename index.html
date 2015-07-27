@@ -38,43 +38,43 @@ function countdowndayfunc(){
 
 function backmoneyfunc1(){ 
   x.innerHTML=countdownnumber;
-  countdownnumber+=1;
+  countdownnumber+=10;
 }
 function backmoneyfunc5(){ 
   x.innerHTML=countdownnumber;
-  countdownnumber+=5;
+  countdownnumber+=80;
 }function backmoneyfunc10(){ 
   x.innerHTML=countdownnumber;
-  countdownnumber+=10;
+  countdownnumber+=200;
 }function backmoneyfunc50(){ 
   x.innerHTML=countdownnumber;
-  countdownnumber+=50;
-}
-function backmoney1(){
-    x.innerHTML=countdownnumber;
-     countdownid=window.setInterval(backmoneyfunc1,1000);
-       countdownnumber+=1;
-}
-function backmoney5(){
-    x.innerHTML=countdownnumber;
-     countdownid=window.setInterval(backmoneyfunc5,1000);
-       countdownnumber+=1;
+  countdownnumber+=1000;
 }
 function backmoney10(){
     x.innerHTML=countdownnumber;
-     countdownid=window.setInterval(backmoneyfunc10,1000);
-       countdownnumber+=1;
+     countdownid=window.setInterval(backmoneyfunc1,1000);
+       countdownnumber+=10;
 }
-function backmoney50(){
+function backmoney80(){
+    x.innerHTML=countdownnumber;
+     countdownid=window.setInterval(backmoneyfunc5,1000);
+       countdownnumber+=80;
+}
+function backmoney200(){
+    x.innerHTML=countdownnumber;
+     countdownid=window.setInterval(backmoneyfunc10,1000);
+       countdownnumber+=200;
+}
+function backmoney1000(){
     x.innerHTML=countdownnumber;
      countdownid=window.setInterval(backmoneyfunc50,1000);
-       countdownnumber+=1;
+       countdownnumber+=1000;
 }
 
 function win(){
   x.innerHTML=countdownnumber;
   if (countdownnumber>1000000){
-    alert("你贏了！！！恭喜成為百萬富翁！！！");
+    alert("你贏了！！！恭喜成為百萬富翁！！！"+"你總共花了"+daycount+"天達成，很厲害喔！！！");
  clearInterval(countdownid);
 
   }
@@ -97,6 +97,33 @@ function income10000(){
   countdownnumber+=10000;
 }
 
+function invest3(){
+  x.innerHTML=countdownnumber;
+  countdownnumber*=1.03;
+  Math.round(countdownnumber);
+    countdownnumber=Math.round(countdownnumber);
+}
+function invest5(){
+  x.innerHTML=countdownnumber;
+  countdownnumber*=1.05;
+  Math.round(countdownnumber);
+    countdownnumber=Math.round(countdownnumber);
+}
+function invest10(){
+  x.innerHTML=countdownnumber;
+  countdownnumber*=1.1;
+  Math.round(countdownnumber);
+    countdownnumber=Math.round(countdownnumber);
+}
+function invest20(){
+
+  x.innerHTML=countdownnumber;
+  countdownnumber*=1.2;
+  Math.round(countdownnumber);
+    countdownnumber=Math.round(countdownnumber);
+}
+
+
 
 </script>
 </head> 
@@ -109,15 +136,21 @@ function income10000(){
 <p>你的財產:</p>
 <div id="countdown"> </div>
 <br><br> 
+
 <button class="btn btn-primary" onclick="income100()">+100</button>
 <button class="btn btn-primary" onclick="income800()">+800</button>
-<button class="btn btn-primary" onclick="income2000()">+2000</button>
-<button class="btn btn-primary" onclick="income10000()">+10000</button>
+<button disabled="disabled" disabled="disabled" class="btn btn-primary" onclick="income2000()">+2000</button>
+<button disabled="disabled" class="btn btn-primary" onclick="income10000()">+10000</button>
 <br>
-<button class="btn btn-info" onclick="backmoney1()">被動收入+1</button>
-<button class="btn btn-info" onclick="backmoney5()">被動收入+5</button>
 <button class="btn btn-info" onclick="backmoney10()">被動收入+10</button>
-<button class="btn btn-info" onclick="backmoney50()">被動收入+50</button>
+<button class="btn btn-info" onclick="backmoney80()">被動收入+80</button>
+<button disabled="disabled" class="btn btn-info" onclick="backmoney200()">被動收入+200</button>
+<button disabled="disabled" id="backmoney1000" class="btn btn-info" onclick="backmoney1000()">被動收入+1000</button>
+<br>
+<button class="btn btn-danger" onclick="invest3()">投資(3%)</button>
+<button disabled="disabled" class="btn btn-danger" onclick="invest5()">投資(5%)</button>
+<button disabled="disabled" class="btn btn-danger" onclick="invest10()">投資(10%)</button>
+<button disabled="disabled" class="btn btn-danger" onclick="invest20()">投資(20%)</button>
 
 </body> 
 </html>
